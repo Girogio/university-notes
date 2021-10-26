@@ -1,1 +1,7 @@
 /current-course
+*.aux
+*.dvi
+*.fdb_latexmk
+*.log
+*.latexmain
+*.toc
