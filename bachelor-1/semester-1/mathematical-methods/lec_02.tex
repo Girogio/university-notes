@@ -1,0 +1,55 @@
+%! TEX root = master.tex
+\newpage
+\lecture{2}{Mon 25 Oct 2021 22:00}{Gaussian-Jordan Elimination}
+
+A set of linear equations in the variables $x_1, x_2, \cdots, x_n$ is called a system of linear equations (linear system). A system of $m$ linear equations in $n$ unknowns can be written as:
+\[
+  \left.\begin{array}{@{}*{7}{c@{}}}
+    a_{11} x_1 & {}+{} & a_{12} x_2 & {}+ \cdots +{} & a_{1n} x_n & {}={} & b_1\\
+    a_{21} x_1 & {}+{} & a_{22} x_2 & {}+ \cdots +{} & a_{2n} x_n & {}={} & b_2\\[-2pt]
+    \vdots     &       & \vdots     &                & \vdots     &       & \vdots\\
+    a_{m1} x_1 & {}+{} & a_{m2} x_2 & {}+ \cdots +{} & a_{mn} x_n & {}={} & b_m
+\end{array}\right\}
+\]
+A linear system can be solved using the augmented matrix 
+
+\begin{equation*}
+  \left(\begin{array}{c:c}A & B\end{array}\right) = 
+    \begin{pmatrix}[cccc:c] 
+    a_{11} & a_{21} & \cdots & a_{1n} & b_1\\
+    a_{21} & a_{22} & \cdots & a_{2n} & b_1\\
+    \vdots & \vdots & \ddots & \vdots & \vdots\\
+    a_{m1} & a_{m2} & \cdots & a_{mn} & b_n
+  \end{pmatrix} 
+\end{equation*}  
+
+A solution of a linear sequence is a sequence of numbers $s_1, s_2, \cdots , s_n$ s.t. $x_1 = s_1, x_2 = s_2 , \cdots , x_n = s_n$ is a solution of every equation.
+
+Solutions can be of 3 types:
+
+\begin{itemize}
+  \item Infinite
+  \item Unique
+  \item Non-existent
+\end{itemize}
+
+An example of \textbf{non-existent} (\emph{inconsistent}) system of equation would be
+
+\[ \left.\begin{array}{cr}
+    x+y&=2\\
+    2x+2y&=6
+\end{array}\right\} \]
+
+  
+
+To solve consistent systems of linear equations one must use the \textbf{elementary row operations} to reduce the augmented matrix $\left(\begin{array}{c:c}A & B\end{array}\right)$ into \textbf{row echelon form}.
+
+The following algorithm (\emph{also referred to as Gaussian Elimination}) must be followed to reduce an $m \times n $ matrix into a row echelon form one.
+
+\begin{enumerate}
+  \item If a row has all entries 0, then it must be placed at the bottom.
+  \item If a row does contain an entry which is not 0, then the first non-zero entry must be 1 (\emph{also referred to as the leading one}).
+  \item In any two successive rows, the bottom one must have the leading 1 furhter to the right than that of the higher.
+\end{enumerate}
+
+If a reduced echelon form matrix is desired, it must be in row echelon form and have every entry of each column which contains a leading one (\emph{except the leading one}), be 0. The process by which a reduced echelon form matrix is obtained is called \emph{Gaussian-Jordan Elimination}.

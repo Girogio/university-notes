@@ -1,0 +1,50 @@
+%! TEX root = master.tex
+
+\lecture{3}{Tue 26 Oct 2021 12:39}{Rank of a Matrix}
+
+\definition{The rank of a matrix, denoted by rank$(\matr A)$, is equal to the number of non-zero rows in a row echelon form of \matri{A}}
+
+\theorem{Let $\matr{AX} = \matr B$ be a linear system of $m$ linear equations in $n$ unknowns with augmented matrix $\left(\begin{array}{c:c}A & B\end{array}\right)$, then 
+
+\begin{itemize}
+  \item the system has a solution if and only if rank(\matri A) $=$ rank$\left(\begin{array}{c:c}A & B\end{array}\right)$
+  \item the system has a uniue solution if and only if rank($\matr{A}$) $=$ rank$\left(\begin{array}{c:c}A & B\end{array}\right) = n$
+  \end{itemize}
+}
+\note{A rank of a matrix augmented with another cannot be smaller than the original non-augmented matrix and thus }
+
+\eg{
+  For which values of $a$ does the following system have a unique solution? For which pairs of $a,b$ does the system have more than one solution?
+    \begin{align*}
+      x-2y &= 1\\
+      x-y + az & = 2\\
+      ay + 9z &= b
+    \end{align*}
+  \[\begin{pmatrix}[ccc:c] 
+        1 & -2 & 0 & 1 \\
+        1 & -1 & a & 2\\
+        0 & a & 9 & b
+    \end{pmatrix} 
+   \mathrel{\underset{\sim}{R}} 
+   \begin{pmatrix}[ccc:c] 
+        1 & -2 & 0 & 1\\
+        0 & 1 & 9 & 1\\
+        0 & 0 & 9-a^2 & b-a
+   \end{pmatrix}\]
+ }
+
+   The solutions is unique if and only if $9-a^2 \neq 0$ which is equivalent to $a \neq \pm 3 \implies$ rank($\matr A$) $=3$. The solutions are infinite if and only if $a = \pm 3$ and $b-a = 0$.
+
+   \[(a,b) = (\pm 3, \pm 3) \implies \text{rank} \matr A) = 3\]
+
+   If a system of $n$ equations in $n$ unknowns (\emph{also referred to as a square system}) has a unique solution, then the solution can be foudn by using the inverse of the coefficient matrix.
+
+    \[\left.\begin{array}{r}
+       AX=B\\
+       A \text{ is } n \times n \\
+       \text{The system has 1 solution}  
+   \end{array}\right\} \matr X = \matr A^{-1} \matr B \]
+
+   \note{
+     An $n \times n$ matrix $\matr A$ is invertible if and only if rank($\matr A\text{)} = n$.
+   }

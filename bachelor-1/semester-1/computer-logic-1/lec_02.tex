@@ -1,0 +1,38 @@
+%! TEX root = master.tex
+
+\lecture{2}{Mon 25 Oct 2021 14:05}{Floating point addition}
+
+Converting $2.25_{10}$ into \textbf{IEEE 754}:
+
+\begin{align*}
+  2.25 &= 2 + 0.25\\
+       &= 2^1 + 2^{-2}\\
+       &= (1 + 2^{-3}) \times 2^1\\
+       &= (-1)^s \times (1 + m) \times 2^{(x-127)} \\
+       &= 0\ 10000000\ 0010\ 000\ 000\ 000
+\end{align*}
+\begin{center}
+\begin{tabular}{c|c|c}
+ $s$ & $x$ & $m$       \\ \hline
+1        & 1000 0000           & 0010 0000 0000 000 \\
+\end{tabular}
+\end{center}
+
+Converting $134.0625_{10}$ into \textbf{IEEE 754}:
+
+\begin{align*}
+  134.0625 &= \left(\frac{2^7}{2^7} + \frac{6}{2^7} + \frac{0.0625}{2^7}\right) \times 2^7\\
+           &= (1 + \frac{6}{2^{7}} + \frac{2^{-4}}{2^7})
+\end{align*}
+
+In floating point arithmetic, operations become more complex. The following is the algorithm for addition:
+
+\begin{itemize}
+  \item Check for zeros. If one operand is zero, the result is the other operand.
+  \item Align the signifcands of the other operands.
+  \item Add the significands.
+  \item Normalize the result.
+\end{itemize}
+
+
+
