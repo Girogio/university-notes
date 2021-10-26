@@ -1,7 +1,0 @@
-PWD /home/grongo/University/bachelor-1/semester-1/introductory-mathematics
-INPUT /etc/texmf/web2c/texmf.cnf
-INPUT /usr/share/texmf/web2c/texmf.cnf
-INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
-INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
-INPUT lec_01.tex
-OUTPUT lec_01.log
