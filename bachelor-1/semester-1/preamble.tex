@@ -2,7 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[a4paper, total={6in, 8in}]{geometry}
-
+\usepackage{tikz}
 \usepackage{textcomp}
 \usepackage{url}
 \usepackage{graphicx}
@@ -13,13 +13,10 @@
 \delimitershortfall=0pt
 \setlength{\dashlinegap}{2pt}
 
-\pdfminorversion=7
 
 % Don't indent paragraphs, leave some space between them
 \usepackage{parskip}
 
-% Hide page number when page is empty
-\usepackage{emptypage}
 \usepackage{subcaption}
 \usepackage{multicol}
 \usepackage{xcolor}
@@ -32,8 +29,11 @@
 % Fancy script capitals
 \usepackage{mathrsfs}
 \usepackage{cancel}
+
 % Bold math
 \usepackage{bm}
+
+
 % Some shortcuts
 \makeatletter
 \renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
@@ -41,8 +41,6 @@
   \let\@ifnextchar\new@ifnextchar
   \array{#1}}
 \makeatother
-% Put x \to \infty below \lim
-\let\svlim\lim\def\lim{\svlim\limits}
 
 %Make implies and impliedby shorter
 \let\implies\Rightarrow
@@ -101,7 +99,10 @@
 
 \newcommand{\matr}[1]{\mathbf{#1}} % undergraduate algebra version
 \newcommand{\matri}[1]{$\mathbf{#1}$} % undergraduate algebra version
-
+\newcommand{\rank}[1]{\text{rank}\left(\mathbf{#1}\right)}
+\newcommand{\inverse}{^{-1}}
+\newcommand{\augmented}[2]{\begin{array}{c:c}\mathbf{#1} & \mathbf{#2}\end{array}}
+\newcommand{\rowequiv}{\mathrel{\underset{\sim}{R}}}
 \newtheorem*{note}{Note}
 \newmdtheoremenv[nobreak=true]{prop}{Proposition}
 % End example and intermezzo environments with a small diamond (just like proof
@@ -117,6 +118,7 @@
 \def\thm@space@setup{%
   \thm@preskip=\parskip \thm@postskip=0pt
 }
+
 
 
 % Exercise 
@@ -174,27 +176,19 @@
 
 
 % These are the fancy headers
-\usepackage{fancyhdr}
-\pagestyle{fancy}
 
 % LE: left even
 % RO: right odd
 % CE, CO: center even, center odd
 % My name for when I print my lecture notes to use for an open book exam.
 % \fancyhead[LE,RO]{Gilles Castel}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
 
-\fancyhead[RO,LE]{\@lecture} % Right odd,  Left even
-\fancyhead[RE,LO]{}          % Right even, Left odd
-
-\fancyfoot[RO,LE]{\thepage}  % Right odd,  Left even
-\fancyfoot[RE,LO]{}          % Right even, Left odd
-\fancyfoot[C]{}     % Center
-
-\makeatother
-
-
-
-
+\fancyhead[RO,LE]{Giorgio Grigolo}
+% Right odd,  Left even
+\fancyfoot[LE, RO]{\thepage}
 % Todonotes and inline notes in fancy boxes
 \usepackage{todonotes}
 \usepackage{tcolorbox}

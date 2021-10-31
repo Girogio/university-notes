@@ -1,0 +1,140 @@
+\documentclass[a4paper]{article}
+\usepackage{amsmath, amsthm, mathtools}
+\input{../../preamble.tex}
+\usepackage{circuitikz}
+\fancyhead[L]{Computer Logic 1 - Lab Report}
+\fancyfoot{}
+\fancyfoot[C]{\thepage}
+\usepackage{caption, subcaption}
+\title{\underline{Computer Logic 1}\\ {\small Lab 2 - Deliverable}}
+\date{October 29, 2021}
+\begin{document}
+
+\maketitle
+\hr
+\newpage
+
+
+\topskip0pt
+\vspace*{\fill}
+\begin{center}
+  {\Huge\textbf{\underline{Truth Table and Schematic}}}
+\end{center}
+\vspace*{\fill}
+\newpage
+
+Below are the worked out values of the truth table for the boolean expressions 
+
+\begin{align*}
+  S &= (A \oplus B) \oplus C_{\text{in}}\\
+  C_{\text{out}} &= A \cdot B + C_{\text{in}} \cdot (A \oplus B)
+\end{align*}
+
+and its representation in a schematic using logic gates.\\
+~\\~\\~\\
+  \begin{center}
+    {\Large
+    \begin{tabular}{|c|c|c||c|c|}
+        \hline
+        $A$ & $B$ & $C_{\text{in}}$   & $S$ & $C_{\text{out}}$\\\hline
+        0 & 0 & 0 & 0 & 0\\\hline
+        0 & 0 & 1 & 1 & 0\\\hline
+        0 & 1 & 0 & 1 & 0\\\hline
+        0 & 1 & 1 & 0 & 1\\\hline
+        1 & 0 & 0 & 1 & 0\\\hline
+        1 & 0 & 1 & 0 & 1\\\hline
+        1 & 1 & 0 & 0 & 1\\\hline
+        1 & 1 & 1 & 1 & 1\\\hline
+    \end{tabular}}
+  \end{center}~\\~\\~\\~\\
+\begin{center}
+  \begin{circuitikz}[scale=1.3, transform shape]
+			% Circuit style
+			\ctikzset{
+				logic ports/scale=0.8,
+				logic ports/fill=lightgray
+			}
+			\draw
+      (0,8) node[xor port] (myxor1) {}
+      (myxor1.in 1) ++(-3,0)node[left](In1){$A$}
+      (myxor1.in 2) ++(-3,0)node[left](In1){$B$}
+      (myxor1.in 2) ++(-3,-1)node[left](In1){$C_{\text{in}}$}
+      (2, 7.5) node[xor port] (myxor2) {}
+      (2, 5.5) node[and port] (myand1) {}
+      (2, 3.5) node[and port] (myand2) {}
+      (4, 4.5) node[or port] (myor1) {}
+      (myxor2.out) -- ++(1,0)node[right](In1){$S$}
+      (myor1.out) -- ++(0.5,0)node[right](In1){$C_{\text{out}}$}
+      (-4, 8.25) to[short, -*] (-3, 8.25)-|(myxor1.in 1)
+      (-4, 7.75) to[short, -*] (-2.5, 7.75)-|(myxor1.in 2)
+      (-4, 6.75) to[short, -*] (0, 6.75)-|(myand1.in 1)
+      (0, 6.75)-|(myxor2.in 2)
+      (0, 8) to[short,-*](0.25, 8)-|(myxor2.in 1)
+
+      (0.25, 8)--(0.25, 5.25)-|(myand1.in 2)
+      (-3,8.25)--(-3,3.25)-|(myand2.in 2)
+      (-2.5,7.75)--(-2.5,3.75)-|(myand2.in 1)
+      (myand1.out)-|(myor1.in 1)
+      (myand2.out)-|(myor1.in 2)
+      ;
+    \end{circuitikz}
+\end{center}
+\newpage
+\topskip0pt
+\vspace*{\fill}
+\begin{center}
+  {\Huge\textbf{\underline{Tinkercad Schematic}}}
+\end{center}
+\vspace*{\fill}
+\newpage
+\topskip0pt
+\vspace*{\fill}
+\begin{figure}[h]
+  \centering
+ % \includegraphics[width=1\textwidth]{schematic.png}
+  \caption*{My breadboard setup for this lab session.}
+  \label{fig:schem}
+\end{figure}
+\vspace*{\fill}
+\newpage
+\topskip0pt
+\vspace*{\fill}
+\begin{center}
+  {\Huge\textbf{\underline{All possible input combinations}}}
+\end{center}
+\vspace*{\fill}
+\newpage
+\begin{figure}
+     \centering
+     \begin{subfigure}[b]{0.9\textwidth}
+         \centering
+ %        \includegraphics[angle=90, width=\textwidth]{alloff.jpeg}
+         \caption*{\textbf{Figure 1.} All switches are off. $A=0,\,B=0$ and so $F=0$.\vspace{2em}}
+         \label{fig:alloff}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.9\textwidth}
+         \centering
+  %       \includegraphics[angle=90, width=\textwidth]{1on.jpeg}
+         \caption*{\textbf{Figure 2. }Only switch 1 is turned on. $A=1,\,B=0$ and so $F=1$.}
+         \label{fig:1on}
+     \end{subfigure}
+ \end{figure}
+\newpage
+\begin{figure}
+     \centering
+     \begin{subfigure}[b]{0.9\textwidth}
+         \centering
+   %      \includegraphics[angle=90, width=\textwidth]{2onn.jpeg}
+         \caption*{\textbf{Figure 3.} Only switch 2 is turned on.  $A=0,\, B=1$ and so $F=1$.\vspace{2em}}
+         \label{fig:2on}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.9\textwidth}
+         \centering
+    %     \includegraphics[angle=90, width=\textwidth]{12onn.jpeg}
+         \caption*{\textbf{Figure 4.} All switches are turned on. $A=1,\, B=1$ and so $F=1$}
+         \label{fig:1on}
+     \end{subfigure}
+   \end{figure}
+\end{document}

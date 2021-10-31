@@ -1,0 +1,124 @@
+\documentclass[a4paper]{article}
+\usepackage{amsmath, amsthm, mathtools}
+\input{../../preamble.tex}
+\usepackage{circuitikz}
+\fancyhead[L]{Computer Logic 1 - Lab Report}
+\fancyfoot{}
+\fancyfoot[C]{\thepage}
+\usepackage{caption, subcaption}
+\title{\underline{Computer Logic 1}\\ {\small Lab 1 - Deliverable}}
+\date{October 29, 2021}
+\begin{document}
+
+\maketitle
+\hr
+\newpage
+
+
+\topskip0pt
+\vspace*{\fill}
+\begin{center}
+  {\Huge\textbf{\underline{Truth Table and Schematic}}}
+\end{center}
+\vspace*{\fill}
+\newpage
+
+Below are the worked out values of the truth table for the boolean expression $(A \cdot B) + (A \oplus B)$ and its representation in a schematic using logic gates.\\
+
+~\\~\\~\\~\\
+~\\~\\~\\~\\
+~\\~\\~\\~\\
+
+ \begin{multicols}{2}
+  \begin{center}
+    ~\\~\\
+    {\Large
+    \begin{tabular}{|c|c|c|c||c|}
+        \hline
+        A & B & $A \cdot B$ & $A \oplus B$ & F \\\hline
+        0 & 0 & 0           & 0            & 0 \\\hline
+        0 & 1 & 0           & 1            & 1 \\\hline
+        1 & 0 & 0           & 1            & 1 \\\hline
+        1 & 1 & 1           & 0            & 1 \\\hline
+    \end{tabular}}
+  \end{center}
+\begin{center}
+  \begin{circuitikz}[scale=1.4, transform shape]
+			% Circuit style
+			\ctikzset{
+				logic ports/scale=0.8,
+				logic ports/fill=lightgray
+			}
+			\draw
+			(0,0) node[and port] (myand) {}
+			(0,2) node[xor port] (myxor) {}
+			(2,1) node[or port] (myor) {}
+			(myand.in 1) -- ++(-0.2,0)node[left](In1){$A$}
+			(myand.in 2) -- ++(-0.2,0)node[left](In2){$B$}
+			(myxor.in 1) -- ++(-0.2,0)node[left]{$A$}
+			(myxor.in 2) -- ++(-0.2,0)node[left]{$B$}
+			(myor.out) -- ++(0.2,0)node[right]{$F$}
+			(myand.out) -- (myor.in 2)
+			(myxor.out) -- (myor.in 1);
+    \end{circuitikz}
+\end{center}
+\end{multicols}
+\newpage
+\topskip0pt
+\vspace*{\fill}
+\begin{center}
+  {\Huge\textbf{\underline{Tinkercad Schematic}}}
+\end{center}
+\vspace*{\fill}
+\newpage
+\topskip0pt
+\vspace*{\fill}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=1\textwidth]{schematic.png}
+  \caption*{My breadboard setup for this lab session.}
+  \label{fig:schem}
+\end{figure}
+\vspace*{\fill}
+\newpage
+\topskip0pt
+\vspace*{\fill}
+\begin{center}
+  {\Huge\textbf{\underline{All possible input combinations}}}
+\end{center}
+\vspace*{\fill}
+\newpage
+\begin{figure}
+     \centering
+     \begin{subfigure}[b]{0.9\textwidth}
+         \centering
+         \includegraphics[angle=90, width=\textwidth]{alloff.jpeg}
+         \caption*{\textbf{Figure 1.} All switches are off. $A=0,\,B=0$ and so $F=0$.\vspace{2em}}
+         \label{fig:alloff}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.9\textwidth}
+         \centering
+         \includegraphics[angle=90, width=\textwidth]{1on.jpeg}
+         \caption*{\textbf{Figure 2. }Only switch 1 is turned on. $A=1,\,B=0$ and so $F=1$.}
+         \label{fig:1on}
+     \end{subfigure}
+ \end{figure}
+\newpage
+\begin{figure}
+     \centering
+     \begin{subfigure}[b]{0.9\textwidth}
+         \centering
+         \includegraphics[angle=90, width=\textwidth]{2onn.jpeg}
+         \caption*{\textbf{Figure 3.} Only switch 2 is turned on.  $A=0,\, B=1$ and so $F=1$.\vspace{2em}}
+         \label{fig:2on}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.9\textwidth}
+         \centering
+         \includegraphics[angle=90, width=\textwidth]{12onn.jpeg}
+         \caption*{\textbf{Figure 4.} All switches are turned on. $A=1,\, B=1$ and so $F=1$}
+         \label{fig:1on}
+     \end{subfigure}
+   \end{figure}
+\end{document}
