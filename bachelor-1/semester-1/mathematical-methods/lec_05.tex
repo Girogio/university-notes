@@ -1,0 +1,30 @@
+%! TEX root = master.tex
+
+\lecture{5}{Wed 03 Nov 2021 10:45}{Determinants}
+
+\subsection*{Definitions}
+
+Let \matri A be a square matrix. The scalar $\det(A)$ or $\mod{A}$  is called the \textbf{determinant} of \matri A.
+
+For a  $2 \times 2$ square matrix, the determinant is given by $a_{11}a_{22} - a_{12}a_{21}$. The plot thickens very quickly as we try to determine the determinant of larger $n \times n$ matrices.\\
+
+The process of evaluating the determinant of an $n \times n$ matrix is described by the following steps:
+\begin{enumerate}
+  \item The \textbf{minor} $\matr{M_{jk}}$ is the matrix obtained from a square matrix when omitting the $j^{th}$ row and the $k^{th}$ column.
+  \item The scalar quantity referred to as the \textbf{cofactor} $\alpha_{jk} = (-1)^{j+k} \det(\matr{M}_{jk})$
+\end{enumerate}
+The determinant of an $n \times n$ matrix \matri{A}, when choosing the first row as the starting point is therefore given by 
+    \begin{align*}
+  \det(\matr{A}) &= a_{11}\alpha_{11} + a_{12}\alpha_{12} + \cdots + a_{1n} \\
+                 &= \sum_{i=1}^n a_{1r}\alpha_{1r}
+\end{align*}
+The same value of the determinant is obtained if the first point of reference is chosen to be any other row or column. To minimize computation complexity, the row or column with the most entries equal to 0 should be chosen with the result of reducing the maximum number of terms in the sequence to 0.
+
+\subsection*{Properties of Determinants}
+
+\begin{enumerate}
+  \item $\det(\matr{A}) = \det(\matr{A}^T)$
+  \item If \matri{A} is an $n \times n$ triangular matrix, then $\det(\matr{A}) = a_{11}a_{22}\cdots a_{nn}$.
+  \item The interchanging of any two consecutive rows only alters the sign of of the determinant without affecting its magnitude.
+  \item If any two rows consecutive rows or columns of an $n \times n$ matrix \matri{A} are equal, then $\det(\matr{A}) = 0$.
+\end{enumerate}
