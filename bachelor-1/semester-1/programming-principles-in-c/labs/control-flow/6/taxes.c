@@ -1,48 +1,53 @@
 #include <stdio.h>
 #include <ctype.h>
+
 int main()
 {
-    float salary = 0;
-    char ict;
-    char collector;
-    float net_salary = 0;
+    float gross_salary, tax = 0;
+    char ict, collector;
 
     int first_bracket = 10000;
 
-    while (salary <= 0)
+    while (gross_salary <= 0)
     {
-        printf("Enter a valid salary: ");
-        scanf("%f", &salary);
+        printf("Enter a valid gross_salary: ");
+        scanf("%f", &gross_salary);
     }
     getchar();
-    printf("\nAre you an employee in the ICT industry? (Y/n)");
-    ict = getchar();
-    getchar();
-    printf("\nAre you a collector of old electronic equipment? (Y/n)");
-    collector = getchar();
+
+    printf("\nAre you an employee in the ICT industry? [Y/n] ");
+    while (!(tolower(ict) == 'y' || tolower(ict) == 'n' || ict == '\n'))
+        ict = getchar();
+
+    if (ict != '\n') // input sheananigans
+    {
+        getchar();
+    }
+
+    printf("Are you a collector of old electronic equipment? [Y/n] ");
+    while (!(tolower(collector) == 'y' || tolower(collector) == 'n' || collector == '\n'))
+        collector = getchar();
 
     if (tolower(collector) == 'y' | collector == '\n')
-    {
         first_bracket = 15000;
-    }
 
-    if (salary > 180000)
+    if (gross_salary > 180000)
     {
-        net_salary = (first_bracket * 0.82) + (8000 * 0.8) + ((salary - 18000) * 0.75);
+        tax = (first_bracket * 0.18) + (8000 * 0.2) + ((gross_salary - 18000) * 0.25);
     }
-    else if (salary > first_bracket)
+    else if (gross_salary > first_bracket)
     {
-        net_salary = (first_bracket * 0.82) + ((salary - first_bracket) * 0.8);
+        tax = (first_bracket * 0.18) + ((gross_salary - first_bracket) * 0.2);
     }
-    else if (salary <= first_bracket)
+    else if (gross_salary <= first_bracket)
     {
-        net_salary = salary * 0.82;
+        tax = gross_salary * 0.18;
     }
 
     if (tolower(ict) == 'y' | ict == '\n')
     {
-        net_salary *= 0.95;
+        tax -= tax * 0.05;
     }
 
-    printf("Net salary: %.2f\n\n", net_salary);
+    printf("Net salary: %.2f\n\n", gross_salary - tax);
 }
