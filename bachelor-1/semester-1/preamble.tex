@@ -13,6 +13,82 @@
 \delimitershortfall=0pt
 \setlength{\dashlinegap}{2pt}
 
+\usepackage{amsmath,amssymb,fancyhdr,array}
+
+\pagestyle{fancy}
+
+\usepackage{xintfrac, xintbinhex, xinttools}
+
+\rhead{1608/1609 WS18/19}
+
+\makeatletter
+\def\DtoB@get@ND #1/#2[#3]{% #2 must be = 1 here, if input was in
+                         % decimal notation
+    \edef\DtoB@s{\xintiiSgn{#1}}%
+    \edef\DtoB@A{\xintiiAbs{#1}}%
+    \def\DtoB@L{#3}%
+    \ifnum#3<\z@
+       \let\DtoB@N\DtoB@A
+       \edef\DtoB@D{\xintiiE{1}{-#3}}%
+    \else
+       \edef\DtoB@N{\xintiiE{\DtoB@A}{#3}}%
+       \def\DtoB@D{1}%
+    \fi
+}%
+\newcommand\ParseFromDecimalToIEEEBinary[1]{%
+   % assume #1 is a decimal number (I will write code for fractions
+   % another day)
+   \expandafter\DtoB@get@ND\romannumeral0\xintrez{#1}%
+   % we should here handle \DtoB@s = 0 but no time tonight, assume input non-zero
+   \edef\DtoB@S@bit{\the\numexpr(1-\DtoB@s)/2}% 1 if number < 0, 0 if number > 0
+   \edef\DtoB@U{\xintDecToBin{\DtoB@N}}%
+   \edef\DtoB@V{\xintDecToBin{\DtoB@D}}%
+   \edef\DtoB@Uk{\the\numexpr\expandafter\xintLength\expandafter{\DtoB@U}-\@ne}%
+   \edef\DtoB@Vl{\the\numexpr\expandafter\xintLength\expandafter{\DtoB@V}-\@ne}%
+   % next step should perhaps compare k and l first
+   % important that we are comparing here two strings of 1s and 0s of
+   % exact same length
+   \ifnum\pdfstrcmp{\DtoB@U\romannumeral\xintreplicate{\DtoB@Vl}{0}}
+                   {\DtoB@V\romannumeral\xintreplicate{\DtoB@Uk}{0}}=\m@ne
+       \edef\DtoB@E{\the\numexpr\DtoB@Uk-\DtoB@Vl-\@ne}%
+   \else
+       \edef\DtoB@E{\the\numexpr\DtoB@Uk-\DtoB@Vl}%
+   \fi
+   \edef\DtoB@Eshifted@bits{\expandafter\@gobble
+          \romannumeral0\xintdectobin{\the\numexpr \DtoB@E + 127 + 256\relax}}%
+   \ifnum\DtoB@E>23
+     \edef\DtoB@f@frac{\DtoB@A/\xintiiPow{2}{\DtoB@E-23}[\DtoB@L]}%
+     %  use rather bintodec conversion of 10000...000 in above?
+   \else
+     \edef\DtoB@f@frac{\xintiiMul{\DtoB@A}{\xintiiPow{2}{23-\DtoB@E}}/1[\DtoB@L]}%
+   \fi
+   \edef\DtoB@f@int{\xintNum{\DtoB@f@frac}}% truncates to an int
+   \edef\DtoB@M@bits{\expandafter\@gobble
+                     \romannumeral0\xintdectobin{\DtoB@f@int}}%
+   %\edef\DtoBresult{\DtoB@S@bit\DtoB@Eshifted@bits\DtoB@M@bits}%
+   \let\IEEEsign\DtoB@S@bit
+   \let\IEEEexponent\DtoB@Eshifted@bits
+   \let\IEEEmantissa\DtoB@M@bits   
+}%
+
+\makeatother
+
+\newcommand\ieee[1]{%
+\ParseFromDecimalToIEEEBinary{#1}%
+\begin{center}
+{\footnotesize\setlength{\tabcolsep}{1pt}\begin{tabular}[t]{|*{32}{w{c}{1em}|}}
+\firsthline
+\xintListWithSep{&}{\xintSeq[-1]{31}{0}}\\
+\hline
+S \romannumeral\xintreplicate{8}{&E}\romannumeral\xintreplicate{23}{&M}\\
+\hline
+\IEEEsign & \xintListWithSep{&}{\IEEEexponent} & \xintListWithSep{&}{\IEEEmantissa}\\
+\hline
+\end{tabular}\par}%
+\end{center}
+}
+
+
 
 % Don't indent paragraphs, leave some space between them
 \usepackage{parskip}
@@ -99,6 +175,7 @@
 
 \newcommand{\matr}[1]{\mathbf{#1}} % undergraduate algebra version
 \newcommand{\matri}[1]{$\mathbf{#1}$} % undergraduate algebra version
+\renewcommand{\mod}[1]{\left|\matr{#1}\right|}
 \newcommand{\rank}[1]{\text{rank}\left(\mathbf{#1}\right)}
 \newcommand{\inverse}{^{-1}}
 \newcommand{\augmented}[2]{\begin{array}{c:c}\mathbf{#1} & \mathbf{#2}\end{array}}
@@ -141,6 +218,7 @@
     \subsubsection*{Oefening \@oefening.#1}
 }
 
+\newcommand{\prob}{\mathbb P}
 
 % \lecture starts a new lecture (les in dutch)
 %
