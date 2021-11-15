@@ -4,7 +4,7 @@
 
 \subsection*{Definitions}
 
-Let \matri A be a square matrix. The scalar $\det(A)$ or $\mod{A}$  is called the \textbf{determinant} of \matri A.
+Let \matri{A} be a square matrix. The scalar $\det(A)$ or $\mod{A}$  is called the \textbf{determinant} of \matri{A}.
 
 For a  $2 \times 2$ square matrix, the determinant is given by $a_{11}a_{22} - a_{12}a_{21}$. The plot thickens very quickly as we try to determine the determinant of larger $n \times n$ matrices.\\
 
@@ -15,16 +15,146 @@ The process of evaluating the determinant of an $n \times n$ matrix is described
 \end{enumerate}
 The determinant of an $n \times n$ matrix \matri{A}, when choosing the first row as the starting point is therefore given by 
     \begin{align*}
-  \det(\matr{A}) &= a_{11}\alpha_{11} + a_{12}\alpha_{12} + \cdots + a_{1n} \\
-                 &= \sum_{i=1}^n a_{1r}\alpha_{1r}
+  \det(\matr{A}) &= a_{11}\matr A_{11} + a_{12}\matr A_{12} + \cdots + a_{1n}\matr A_{1n} \\
+                 &= \sum_{i=1}^n a_{1r}\matr A_{1r}
 \end{align*}
 The same value of the determinant is obtained if the first point of reference is chosen to be any other row or column. To minimize computation complexity, the row or column with the most entries equal to 0 should be chosen with the result of reducing the maximum number of terms in the sequence to 0.
 
 \subsection*{Properties of Determinants}
 
 \begin{enumerate}
-  \item $\det(\matr{A}) = \det(\matr{A}^T)$
-  \item If \matri{A} is an $n \times n$ triangular matrix, then $\det(\matr{A}) = a_{11}a_{22}\cdots a_{nn}$.
-  \item The interchanging of any two consecutive rows only alters the sign of of the determinant without affecting its magnitude.
-  \item If any two rows consecutive rows or columns of an $n \times n$ matrix \matri{A} are equal, then $\det(\matr{A}) = 0$.
+  \item [P1.] $\det(\matr{A}) = \det(\matr{A}^T)$
+  \item [P2.] If \matri{A} is an $n \times n$ triangular matrix, then $\det(\matr{A}) = a_{11}a_{22}\cdots a_{nn}$.
+  \item [P3.] The interchanging of any two consecutive rows only alters the sign of of the determinant without affecting its magnitude.
+  \item [P4.] If any two rows consecutive rows or columns of an $n \times n$ matrix \matri{A} are equal, then $\det(\matr{A}) = 0$.  
 \end{enumerate}
+\newpage
+  \begin{theorem}\label{thm:scalar-out}
+    If all elements of one row are multiplied by a constant $k$, then the value of the determinant is also multiplied by k.
+  \end{theorem}
+
+\begin{proof}
+    Let \matri{K} be the general $n \times n$ matrix \matri{A} but with all entries in the first row multiplied by $k$. Then,
+    \begin{align*}
+      \mod{K} &=
+    \begin{vmatrix} 
+      ka_{11} & ka_{12} & \cdots & ka_{1n}\\
+      a_{21} & a_{22} & \cdots & a_{2n}\\
+      \vdots & \vdots & \ddots & \vdots\\
+      a_{n1} & a_{n2} & \cdots & a_{nn}
+    \end{vmatrix}\\
+              &= ka_{11}A_{11} + ka_{12}A_{12} + \cdots + ka_{1n}A_{1n}\\
+              &= k(a_{11}A_{11} + a_{12}A_{12} + \cdots + a_{1n}A_{1n})\\
+              &= k\mod{A}
+    \end{align*}
+\end{proof}
+
+\corollary{If any two rows of an $n \times n$ matrix \matri A are multiples of the other (\emph{are linearlly dependent}), then the $\mod{A} = 0$.}
+\corollary{If \matri{A} is an $n \times n$ matrix, then $\det{(k\matr A)} = k^n \det(\matr A)$.}
+\vspace{2em}
+\begin{theorem}
+ If a distinct scalar $\alpha_{ij}$ is added to all the entries of a row of an $n \times n$ matrix \matri{A}, then $\det(\matr A)$ is equal to 
+ \[  \begin{vmatrix}
+      a_{11} & a_{12} & \cdots & a_{1n}\\
+      a_{21} & a_{22} & \cdots & a_{2n}\\
+      \vdots & \vdots & \ddots & \ldots\\
+      a_{n_1} & a_{n_2} & \cdots & a_{nn}\\ 
+    \end{vmatrix} 
+    + 
+    \begin{vmatrix}
+      \alpha_{11} & \alpha_{12} & \cdots & \alpha_{1n}\\
+      a_{21} & a_{22} & \cdots & a_{2n}\\
+      \vdots & \vdots & \ddots & \vdots\\
+      a_{n_1} & a_{n_2} &\cdots& a_{nn}
+      \end{vmatrix}.\] 
+\end{theorem}
+\begin{proof}
+  \[
+    \text{Consider\ \ \ }
+    \begin{vmatrix}
+      a_{11}+\alpha_{11} & a_{12}+\alpha_{12} & \cdots & a_{1n}+\alpha_{1n}\\
+      a_{21} & a_{22} & \cdots & a_{2n}\\
+      \vdots & \vdots & \ddots & \ldots\\
+      a_{n_1} & a_{n_2} & \cdots & a_{nn}\\ 
+    \end{vmatrix}\\
+  \]
+  \begin{align*}
+    &= \left(a_{11} + \alpha_{11}\right)\matr A_{11} + \left(a_{12} + \alpha_{12}\right)A_{12} + \cdots + \left( a_{1n} + \alpha_{1n} \right)\matr A_{1n}\\
+    &= (a_{11}\matr A_{11} + a_{12}\matr A_{12} + \cdots + a_{1n}\matr A_{1n}) + \left(\alpha_{11}\matr A_{11} + \alpha_{12}\matr A_{12} + \cdots + \alpha_{1n}\matr A_{1n}\right)\\
+  \end{align*}
+\end{proof}
+\newpage
+\begin{theorem}\label{thm:row-distr}
+  The value of a determinant is unchanged if we add to the entries of any row the same multiple of the corresponding entries of another row.
+
+\begin{center}
+  If $\mod{A} =
+  \begin{vmatrix}
+    a_{11} & a_{12} & \cdots & a_{1n}\\
+    a_{21} & a_{22} & \cdots & a_{2n}\\
+    \vdots & \vdots & \ddots & \vdots\\
+    a_{n1} & a_{n2} & \cdots & a_{nn}
+  \end{vmatrix}$, then $
+  \begin{vmatrix}
+    a_{11} + ka_{21} & a_{12}+ka_{22} & \cdots & a_{1n} + ka_{2n}\\
+    a_{21} & a_{22} & \cdots & a_{2n}\\
+    \vdots & \vdots & \ddots & \vdots\\
+    a_{n1} & a_{n2} & \cdots & a_{nn}
+  \end{vmatrix} = \mod{A}$
+\end{center}  
+
+\end{theorem}
+\begin{proof}
+Let  $\matr K =\begin{vmatrix}
+    a_{11} + ka_{21} & a_{12}+ka_{22} & \cdots & a_{1n} + ka_{2n}\\
+    a_{21} & a_{22} & \cdots & a_{2n}\\
+    \vdots & \vdots & \ddots & \vdots\\
+    a_{n1} & a_{n2} & \cdots & a_{nn}
+  \end{vmatrix}$. Then, by Theorem ~\ref{thm:row-distr}, \[\mod{K} = \mod{A} + 
+\begin{vmatrix}
+    ka_{21} & ka_{22} & \cdots & ka_{2n}\\
+    a_{21} & a_{22} & \cdots & a_{2n}\\
+    \vdots & \vdots & \ddots & \vdots\\
+    a_{n1} & a_{n2} & \cdots & a_{nn}
+  \end{vmatrix}.\]
+  Then, by Theorem \ref{thm:scalar-out} and P4, 
+$ 
+  \begin{vmatrix}
+    ka_{21} & ka_{22} & \cdots & ka_{2n}\\
+    a_{21} & a_{22} & \cdots & a_{2n}\\
+    \vdots & \vdots & \ddots & \vdots\\
+    a_{n1} & a_{n2} & \cdots & a_{nn}
+  \end{vmatrix} 
+  =
+  k\begin{vmatrix}
+    a_{21} & a_{22} & \cdots & a_{2n}\\
+    a_{21} & a_{22} & \cdots & a_{2n}\\
+    \vdots & \vdots & \ddots & \vdots\\
+    a_{n1} & a_{n2} & \cdots & a_{nn}
+  \end{vmatrix}
+  = 0
+$
+~\\~\\~\\Therefore, $\mod{K} = \mod{A}$.
+\end{proof}
+\begin{theorem}\label{thm:det-distr}
+  The determinant of the product of two matrices is equal to the product of the two determinants.
+  $$\det(\matr{AB}) = \det(\matr A) \det(\matr B)$$
+\end{theorem}
+\begin{proof}
+  This proof is left as an exercise to the reader for the $2 \times 2$ matrix case.
+\end{proof}
+
+\begin{theorem}
+  If $\matr A \inverse$ is invertible, then $\mod{A \inverse} = \frac{1}{\det{(\matr A)}}$ 
+\end{theorem}
+
+\begin{proof}
+  \matri A is invertible. Thus 
+  \begin{align*}
+    \exists\ \matr B \text{ s.t. } \matr{AB} &= I\\
+    \det{(\matr{AB})} &= \det{(I)}\\
+    \det(\matr A) \cdot \det(\matr B) &= 1\\
+    \det(\matr B) &= \frac{1}{\det(\matr A)}
+ \end{align*}
+\end{proof}
+\remark{An $n \times n$ matrix is invertible $\Leftrightarrow \det(\matr A) \neq 0$}

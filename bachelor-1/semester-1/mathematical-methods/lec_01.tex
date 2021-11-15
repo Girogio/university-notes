@@ -1,8 +1,8 @@
 %! TEX root = master.tex
 \lecture{1}{Fri 22 Oct 2021 16:55}{Matrix definitions and operations}
 
-\definition[Rectangular matrix]{An $m \times n$ matrix is a rectangular array of numbers, arranged in $m$ rows and $n$ columns. The elements of said matrix are called \textbf{entries} and the expression $m \times n$ denotes its \textbf{size}.}
-
+\begin{definition}
+  An $m \times n$ matrix is a rectangular array of numbers, arranged in $m$ rows and $n$ columns. The elements of said matrix are called \textbf{entries} and the expression $m \times n$ denotes its \textbf{size}.
 \[\matr A =  (a_{ij})_{m \times n}  = 
  \begin{pmatrix}
    a_{1,1} & a_{1,2} & \cdots & a_{1,n} \\
@@ -10,11 +10,32 @@
    \vdots  & \vdots  & \ddots & \vdots  \\
    a_{m,1} & a_{m,2} & \cdots & a_{m,n} 
  \end{pmatrix} \]
+\end{definition}
 
- \definition[Square matrix]{An $ n\times n$ matrix is called a \textbf{square matrix} of order $n$. The entries $\set{a_{11}, a_{22}, \ldots, a_{nn}}$ form the \textbf{main diagonal}.}
- 
- \definition[Matrix equality]{Two matrices are equal if they have the \textbf{same dimensions} and all their corresponding entries are equal. 
+\begin{definition}
+  An $ n\times n$ matrix is called a \textbf{square matrix} of order $n$.
+
+  The entries $\set{a_{11}, a_{22}, \ldots, a_{nn}}$ form the \textbf{main diagonal}.
+\end{definition}
+
+ \begin{definition}
+   Two matrices are equal if they have the \textbf{same dimensions} and all their corresponding entries are equal. 
    $$a_{ij} = b_{ij},\, \forall\,\, i,\,j\in\mathbb{N} $$
- }
-
+\end{definition}~\\
+Let $\matr A = \left( a_{ij} \right)_{m \times n}$ and $\matr B = \left( b_{ij} \right)_{m \times n}$, then 
+\begin{align*}
+\matr A + \matr B  &= \left( a_{ij} + b_{ij} \right)_{m \times n}\\
+\matr A - \matr B &= \left( a_{ij} - b_{ij} \right)_{m \times n}\\
+\lambda\matr A &= \left( \lambda a_{ij} \right)_{m \times n}\\
+\matr{AB} &= \left( c_{ij} \right)_{m \times n}\\
+\end{align*}
+where $c_{ij} = \sum_{k=1}^r a_{ik}b_{kj}$.
+\begin{note}
+  In general, for two matrices \matri A and \matri B, $\matr{AB} \neq \matr{BA}$, because
+  \begin{itemize}
+    \item $\matr{AB}$ could be defined but $\matr{BA}$ is not.
+    \item both are defined but $\matr{AB}$ and $\matr{BA}$ have different size.
+    \item both might be defined and have the same size, but $\matr{AB} \neq \matr{BA}$.
+  \end{itemize}
+\end{note}
 
