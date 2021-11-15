@@ -1,0 +1,17 @@
+%! TEX root = master.tex
+
+\lecture{5}{Mon 01 Nov 2021 15:49}{Adders}
+
+\textbf{Carry lookahead Adder}
+
+\textbf{Carry-lookahead logic}
+
+For $C_n$ to be true, at least one of the following conditions must be met.
+\begin{itemize}
+  \item The previous adder, ggenerates a carry: $G_{n-1} = 1$
+  \item $C_{n-1}$ is true, and the first adder propogated a carry $P_{n-1} = 1$
+\end{itemize}
+
+\[C_n = G_{n-1} + C_{n-1}P_{n-1}\]
+
+

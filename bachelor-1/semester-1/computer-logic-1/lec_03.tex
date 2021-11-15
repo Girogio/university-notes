@@ -1,0 +1,33 @@
+%! TEX root = master.tex
+
+\lecture{3}{Mon 01 Nov 2021 14:01}{Binary Multiplication}
+
+The binary multiplication algorithm goes as follows:
+
+\begin{itemize}
+  \item Check for zeros. If one operand is zero, the result is zero. 
+  \item Add the exponents. Since the exponents are biased, adding them gives double biasing, so the bias value has to be subtracted.
+  \item Multiply the significands.
+  \item Normalize the results.
+\end{itemize}
+
+\eg{
+  \textbf{In decimal: }\\\\
+Step 1. Multiply the significands.
+  $$1.8 \times 9.5= 17.10$$
+Step 2. Add the exponenets.
+  $$1+0 = 1$$
+Step 3. Normalize the number.
+  $$1.7 \times 10^2$$
+}
+
+\eg{\textbf{In binary: }
+
+\begin{align*}
+  1.8 \times 10^1 &= \frac{18}{2^4} \times 2^4 \\
+            &= 1 + 0.125 \times 2^4\\
+.\end{align*}
+
+\ieee{18}
+
+}
