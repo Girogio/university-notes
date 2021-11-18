@@ -1,0 +1,58 @@
+%! TEX root = master.tex
+
+\lecture{7}{Mon 15 Nov 2021 17:19}{Eigenvectors}
+To find the \emph{eigenvectors} of an $n \times n$ matrix, or rather, a
+parametrization of the family of eigenvectors for the given matrix, we
+substitute the previously obtained eigenvalues into the characteristic
+equation:
+\[\left.\begin{array}{clr}
+    (\matr A - \lambda_1\matr I)\matr x &= \matr 0\\
+    (\matr A - \lambda_2\matr I)\matr x &= \matr 0\\
+                                        &\vdots\\
+    (\matr A - \lambda_n\matr I)\matr x &= \matr 0
+\end{array}\right\}\]
+
+\textbf{Ex.}
+Consider the matrix $\matr A = \left(\begin{smallmatrix} 3 & 0\\ 8 & -1 \end{smallmatrix}\right)$ whose eigenvalues are $-1$ and 3.
+\[\begin{pmatrix} 3 - \lambda_1 & 0\\8 & -1 -\lambda_1 \end{pmatrix}
+ \begin{pmatrix} x_{11}\\x_{12}\end{pmatrix} = 0\]
+Letting $\lambda_1 = -1$ and substituting into the characterstic equation we
+get: 
+\[\begin{pmatrix}[cc|c] 4 & 0 & 0\\ 8 & 0 & 0 \end{pmatrix} \rowequiv \begin{pmatrix}[cc|c] 1 & 0 & 0\\ 0 & 0 & 0 \end{pmatrix}\]
+\[\implies \left.\begin{array}{lr}
+    x_{11}= 0 \\
+    x_{12}= t \neq 0
+\end{array}\right\}\matr x_1 = t \begin{pmatrix} 0\\1\end{pmatrix} \]
+Letting $\lambda_2 = 3$ and substituting into the characterstic equation we get: 
+\[\begin{pmatrix}[cc|c] 0 & 0 & 0\\ 8 & -4 & 0 \end{pmatrix} \rowequiv
+ \begin{pmatrix}[cc|c] 0 & 0 & 0\\ 0 & 0 & 0 \end{pmatrix}\]
+\[\implies \left.\begin{array}{lr}
+    x_{11}= r \neq 0 \\
+    2x_{11} = x_{12} = 2r
+\end{array}\right\}\matr x_2 = t \begin{pmatrix} 1\\2\end{pmatrix} \]
+
+Thus, $\begin{pmatrix} 3&0\\8&-1\end{pmatrix}$ has eigenvectors $\matr x_1
+= \begin{pmatrix} 0\\1 \end{pmatrix}$ and $\matr x_2=
+\begin{pmatrix}1\\2\end{pmatrix}$.
+
+\begin{theorem}
+  If \matri A is an $n \times n$ matrix, then the following are equivalent: 
+  \begin{itemize}
+    \item $\lambda$ is an eigenvalue of \matri A.
+    \item there is a non-zero vector \matri x of dimension $n$ such that $\matr{Ax} = \lambda\matr x$. 
+    \item $\lambda$ is the solution of $\det(\matr A - \lambda\matr I)\matr x = \matr 0$.
+    \item the system of equations $\left( \matr A - \lambda\matr I \right)\matr
+      x = \matr 0 $ has an infinite number of non-trivial solutions.
+  \end{itemize}
+\end{theorem}
+
+\begin{note}
+  The complete solution set of the homogenous system of equations $\left( \matr
+  A - \lambda\matr I \right)\matr x = \matr 0$ is called the
+  \textbf{eigenspace} of \matri A corresponding to the eigenvalue $\lambda$ and
+  is denoted by $\mathrm E_\lambda$. The elements of the set of particular
+  solutions obtained by solving the the above system of equations using
+  Gaussian elimination and setting each independent variable to 1 and all the
+  other variables to 0 are called the \textbf{fundamental eigenvectors}. 
+\end{note}
+

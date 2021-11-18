@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="controlflow"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/grongo/University/current-course/labs/controlflow/cmake-build-release"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/grongo/University/current-course/labs/controlflow/cmake-build-release"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="q8">
+				<Option output="/home/grongo/University/current-course/labs/controlflow/cmake-build-release/q8" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/grongo/University/current-course/labs/controlflow/cmake-build-release"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 q8"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="q8/fast">
+				<Option output="/home/grongo/University/current-course/labs/controlflow/cmake-build-release/q8" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/grongo/University/current-course/labs/controlflow/cmake-build-release"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 q8/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="q7">
+				<Option output="/home/grongo/University/current-course/labs/controlflow/cmake-build-release/q7" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/grongo/University/current-course/labs/controlflow/cmake-build-release"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 q7"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="q7/fast">
+				<Option output="/home/grongo/University/current-course/labs/controlflow/cmake-build-release/q7" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/grongo/University/current-course/labs/controlflow/cmake-build-release"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 q7/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="q2">
+				<Option output="/home/grongo/University/current-course/labs/controlflow/cmake-build-release/q2" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/grongo/University/current-course/labs/controlflow/cmake-build-release"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 q2"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="q2/fast">
+				<Option output="/home/grongo/University/current-course/labs/controlflow/cmake-build-release/q2" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/grongo/University/current-course/labs/controlflow/cmake-build-release"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 q2/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/grongo/University/current-course/labs/controlflow/cmake-build-release"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="q4">
+				<Option output="/home/grongo/University/current-course/labs/controlflow/cmake-build-release/q4" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/grongo/University/current-course/labs/controlflow/cmake-build-release"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 q4"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="q4/fast">
+				<Option output="/home/grongo/University/current-course/labs/controlflow/cmake-build-release/q4" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/grongo/University/current-course/labs/controlflow/cmake-build-release"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 q4/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="q6">
+				<Option output="/home/grongo/University/current-course/labs/controlflow/cmake-build-release/q6" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/grongo/University/current-course/labs/controlflow/cmake-build-release"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 q6"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="q6/fast">
+				<Option output="/home/grongo/University/current-course/labs/controlflow/cmake-build-release/q6" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/grongo/University/current-course/labs/controlflow/cmake-build-release"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 q6/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="q3">
+				<Option output="/home/grongo/University/current-course/labs/controlflow/cmake-build-release/q3" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/grongo/University/current-course/labs/controlflow/cmake-build-release"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 q3"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="q3/fast">
+				<Option output="/home/grongo/University/current-course/labs/controlflow/cmake-build-release/q3" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/grongo/University/current-course/labs/controlflow/cmake-build-release"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 q3/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="q5">
+				<Option output="/home/grongo/University/current-course/labs/controlflow/cmake-build-release/q5" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/grongo/University/current-course/labs/controlflow/cmake-build-release"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 q5"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="q5/fast">
+				<Option output="/home/grongo/University/current-course/labs/controlflow/cmake-build-release/q5" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/grongo/University/current-course/labs/controlflow/cmake-build-release"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 q5/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/grongo/University/current-course/labs/controlflow/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/grongo/University/current-course/labs/controlflow/q2.c">
+			<Option target="q2"/>
+		</Unit>
+		<Unit filename="/home/grongo/University/current-course/labs/controlflow/q3.c">
+			<Option target="q3"/>
+		</Unit>
+		<Unit filename="/home/grongo/University/current-course/labs/controlflow/q4.c">
+			<Option target="q4"/>
+		</Unit>
+		<Unit filename="/home/grongo/University/current-course/labs/controlflow/q5.c">
+			<Option target="q5"/>
+		</Unit>
+		<Unit filename="/home/grongo/University/current-course/labs/controlflow/q6.c">
+			<Option target="q6"/>
+		</Unit>
+		<Unit filename="/home/grongo/University/current-course/labs/controlflow/q7.c">
+			<Option target="q7"/>
+		</Unit>
+		<Unit filename="/home/grongo/University/current-course/labs/controlflow/q8.c">
+			<Option target="q8"/>
+		</Unit>
+		<Unit filename="/home/grongo/University/current-course/labs/controlflow/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

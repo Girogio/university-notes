@@ -1,0 +1,49 @@
+%! TEX root = master.tex
+\newpage
+\lecture{2}{Fri 12 Nov 2021 13:08}{Geometric Probability}
+Step 1: Determine the set that contains all possible points:
+\[\Omega = \{(x,y) \in \mathbb R^2 \colon x^2 + y^2 \leq r^2\}   \]
+\[\prob[s_1] = \frac{A_{s_1}}{A_\Omega} = \frac{\pi r^2 - B}{8\pi r^2}\]
+
+
+\begin{problem}
+  The rod of length L.\\
+  A rod of length $l$ is split randomly into 3 parts by making two cuts at random distances $x$ and $y$ from one end.\\
+
+  \textbf{Step 1:} Determine the set that contains all possible point:
+  \begin{align*}
+    \Omega &= \{(x,y) \colon 0 \leq x \leq l \text{ and } 0 \leq y \leq l \}\\
+    A_\Omega & = l^2
+  \end{align*}
+
+  \textbf{Step 2:} Identify the region for which our condition holds, namely the values of $x$ and $y$ for which \emph{a triangle can be formed}.
+
+  Case 1: $x<y$ 
+    \begin{align*}
+      \frac{l}{2} &< y-x\\
+      \implies y &> x + \frac{l}{2}
+    \end{align*}
+  Case 2:  $y<x$ 
+  \begin{align*}
+    \frac{l}{2} &> x-y\\
+    \implies y &> x - \frac{l}{2}
+  \end{align*}
+
+  \[\prob[\text{triangle is formed}] = \frac{l^2 / 4}{l^2} = \frac{1}{4}\]
+\end{problem}
+
+\begin{problem}
+  Buffon's needle.\\
+  A needle of lenght $l$ is thrown randomly on a plane which is ruled by infinite parallel lines equally seperated by a distande $d$, where $l<d$. We wish to find the probability that the needle intersects one of them.
+
+  Let $x$ be the distance of the mid=point of the needle to the closest line. There are three extreme cases. 
+\begin{itemize}
+  \item  One where the needle does not touch any of the rules (lands in between),
+  \item one in which one end of the needle just touches one of the rules,
+  \item and the final where the midpoint of the needle intersects one of the rules.
+\end{itemize}
+  
+\textbf{Step 1:} Identify the set of all possible outcomes.
+\[\Omega = \{(x,\theta) : 0 \leq x \leq \frac{l}{2} ; 0 \leq \theta \leq \pi\} \]
+
+\end{problem}

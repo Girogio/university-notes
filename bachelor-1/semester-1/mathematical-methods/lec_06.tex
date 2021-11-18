@@ -1,18 +1,24 @@
-z%! TEX root = master.tex
+%! TEX root = master.tex
 
 \lecture{6}{Tue 09 Nov 2021 14:59}{Eigenvalues}
 
 \begin{definition}
-  Let \matri{A} be an $n \times n$ matrix. A non-zero n-vector $\matr x$ such that $$\matr A \matr x = \lambda \matr x$$ is called an \textbf{eigenvector} of \matri A with corresponding \textbf{eigenvalue} $\lambda$.
+  Let \matri{A} be an $n \times n$ matrix. A non-zero n-vector $\matr x$ such that
+  $$\matr A \matr x = \lambda \matr x$$ is called an \textbf{eigenvector} of \matri A
+  with corresponding \textbf{eigenvalue} $\lambda$.
 \end{definition}~\\
-To find the eigenvalues, consider $\matr{Ax} = \lambda \matr{x}$.
-\begin{align*}
-  \matr{Ax} - \lambda\matr x &= 0\\
-  (\matr{A} - \lambda\matr{I})\matr{x} &= 0
-\end{align*}
-The above, is a homogenous system of equations which must ahve a solution other than $\matr x = 0$. 
-
-The eigenvalues of a matrix \matri{A} are the values of $\lambda$ that satisfy the following equation, which is referred to as the \emph{characteristic equation}. 
+To find the eigenvalues, consider $\matr{Ax} = \lambda \matr{x}$. After applying some
+algebraic manipulations, particularly the factorisation of \matri x, which involves
+the multiplication of $\lambda$ and the identity matrix, we get:
+ \[ (\matr{A} - \lambda\matr{I})\matr{x} = 0\]
+Above equation is a homogenous system of equations which must ahve a solution other
+than $\matr x = 0$. 
+The eigenvalues of any $n \times n$ matrix \matri{A} are the values of $\lambda$ that
+satisfy the following equation, which is referred to as the \emph{characteristic
+equation}. 
 \[\det(\matr{A} - \lambda\matr I) = 0.\]
-
-
+\begin{note}
+  For an $n \times n$ matrix, the above equation turns out to be just a polynomial of
+  degree $n$ in terms of $\lambda$. As expected, its roots might be real or complex
+  as well as distinct or equal.
+\end{note}

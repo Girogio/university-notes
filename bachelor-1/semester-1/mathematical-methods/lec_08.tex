@@ -1,0 +1,54 @@
+%! TEX root = master.tex
+
+\lecture{8}{Tue 16 Nov 2021 14:29}{Diagonalization}
+
+  An $n \times n$ matrix \matri A is diagonalisable if it is ``similar'' to a
+  diagonal matrix \matri D, that is, there exists an invertible matrix \matri P such
+  that $\matr D = \matr P \inverse \matr{AP}$. 
+
+  In this case, \matri D is the diagonal
+  matrices whose entries on the main diagonal are the eigenvalues $
+  \lambda_1,\, \lambda_2,\, \cdots,\,\lambda_n$ of the initial matrix \matri{A}. \matri{P} is the square matrix whose
+  column vectors are the eigenvectors of the initial matrix \matri{A}.
+
+  \begin{definition}
+    An $n \times n$ matrix \matri A is diagonalisable if the number of
+    fundamental eigenvectors is equal to its dimension.
+  \end{definition}
+
+  Recall $\matr A = \left(\begin{smallmatrix} 3 & 2\\-1 & 0\end{smallmatrix}\right)$, whose eigenvalues are
+  $\lambda_1 = 1,\,\lambda_2 = 2$; and whose fundamental eigenvectors are
+  $\left(\begin{smallmatrix} -1\\1
+      \end{smallmatrix}\right),\,\left(\begin{smallmatrix}
+  2\\-1\end{smallmatrix}\right)$.
+ 
+  \textbf{Ex.} 
+  Thus, 
+  \begin{equation*}
+    \begin{aligned}
+      \matr D &= \begin{pmatrix} 1 & 0\\ 0 & 2 \end{pmatrix}
+    \end{aligned}
+    \qquad
+    \begin{aligned}
+    \matr P &= \begin{pmatrix} -1 & 2\\1 & -1 \end{pmatrix}\\
+    \matr P \inverse &= \begin{pmatrix} 1 & 2\\1 & 1 \end{pmatrix}
+    \end{aligned}
+  \end{equation*}
+
+  \begin{problem}
+    Find $\matr A^{5}$, where $\matr A = \begin{pmatrix} 3&2\\-1&0 \end{pmatrix}$.
+    But $\matr D  = \matr P \inverse \matr{AP} \implies \matr A = \matr{PD} \matr P
+    \inverse$. Then, 
+\begin{align*}
+  \matr A^{5} &= (\matr{PD} \matr P \inverse)^5\\
+              &= \matr{PD} \matr P \inverse \cdot \matr{PD} \matr P \inverse \cdot
+              \matr{PD} \matr P \inverse \cdot \matr{PD} \matr P \inverse \cdot
+              \matr{PD} \matr P \inverse\\
+              &=\matr P \matr D^5 \matr P \inverse
+\end{align*}
+  \end{problem}
+
+  \begin{note}
+    If \matri A is diagonalisable, then $\matr A^n = \matr P \matr D^n \matr P
+    \inverse$
+  \end{note}

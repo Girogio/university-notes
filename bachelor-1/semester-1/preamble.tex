@@ -109,15 +109,6 @@ S \romannumeral\xintreplicate{8}{&E}\romannumeral\xintreplicate{23}{&M}\\
 % Bold math
 \usepackage{bm}
 
-
-% Some shortcuts
-\makeatletter
-\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
-  \hskip -\arraycolsep
-  \let\@ifnextchar\new@ifnextchar
-  \array{#1}}
-\makeatother
-
 %Make implies and impliedby shorter
 \let\implies\Rightarrow
 \let\impliedby\Leftarrow
@@ -169,7 +160,7 @@ S \romannumeral\xintreplicate{8}{&E}\romannumeral\xintreplicate{23}{&M}\\
 \newtheorem*{terminology}{Terminology}
 \newtheorem*{application}{Application}
 \newtheorem*{question}{Question}
-\newtheorem*{eg}{Example}
+\newtheorem*{example}{Example}
 \newtheorem*{notation}{Notation}
 \newtheorem*{previouslyseen}{As previously seen}
 
@@ -196,6 +187,10 @@ S \romannumeral\xintreplicate{8}{&E}\romannumeral\xintreplicate{23}{&M}\\
   \thm@preskip=\parskip \thm@postskip=0pt
 }
 
+  \renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+    \hskip -\arraycolsep
+    \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
 
 
 % Exercise 
