@@ -1,0 +1,60 @@
+%! TEX root = master.tex
+
+\lecture{9}{Wed 24 Nov 2021 11:10}{Ordinary differential equations}
+
+
+\begin{definition}
+  And \emph{ordinary differential equation} of order $n$ has the general form
+  \[\frac{d^ny}{dx^n} = f\left(x,y,\frac{dy}{dx},\ldots, \frac{d^{n-1}y}{dx^{n-1}}\right)\]
+  defined for $x \in I$, where $f$ is \textit{usually a well-behaved function} and $I = (a,b) 
+  \subseteq \mathbb R$.
+\end{definition}
+
+\begin{example}
+Show that $y = 3\sin(2x) + e^{-x}$ is an explicit solution of $y'' + 4y = 5e^{-x}$.
+\begin{proof}
+\begin{align*}
+  y' &= 6\cos(2x) - e^{-x} \\
+  y'' &= -12\sin(2x) + e^{-x}
+\end{align*}
+Substituting $y'$ and $y'$ in the ordinary differential equation:
+\begin{align*}
+  & -12\sin(2x) + e^{-x} + 4\left( 3\sin(2x) - e^{-x} \right)\\
+=&\ 5e^{-x} 
+\end{align*}
+\end{proof}
+\end{example}
+
+To solve an ordinary differential equation of order $n$ means to find an explicit function
+$y=y(x)$ such that $\frac{d^ny}{dx^n} = f\left(x,y,\frac{dy}{dx}, \ldots, \frac{d^{n-1}y}{dx^{n-1}}\right)$ is
+satisfied $\forall x \in I$.
+
+
+A relation $F(x,y) = 0$ is said to be an implicit solution to the ordinary
+differential equation on the interval $I$ if it defines one or more explicit
+solutions on $I$.
+
+\begin{example}
+  Show that $xy^{3}-xy^{3}\sin(x)-1=0$ is an implicit solution to $y' =
+  \frac{y\left(x\cos(x) + \sin(x) - 1\right)}{3x(1-\sin(x))}$
+  \begin{proof}
+    %TODO
+  \end{proof}
+\end{example}
+
+To solve an \emph{interval value problem} for an ordinary differential equation of
+order $n$ means to find a solution $y=y(x)$ of the ordinary differential equation on
+an interval $I$ which satisfies $x_0 \in I$ and the following $n$ initial conditions:
+
+\begin{itemize}
+  \item $y\big|_{x=x_0} = y_0$
+  \item $y'\big|_{x=x_0} = y_1$
+  \item $y''\big|_{x=x_0} = y_2$
+  \\ $\vdots$
+  \item $\frac{d^{n-1}y}{dx^{n-1}}\big|_{x=x_0} = y_{n-1}$
+\end{itemize}
+
+\begin{example}
+  Show that $y=x$ is a solution to the interval value problem $y' -xy = 1-x^{2},\ 
+  y(0) = 0$.
+\end{example}
