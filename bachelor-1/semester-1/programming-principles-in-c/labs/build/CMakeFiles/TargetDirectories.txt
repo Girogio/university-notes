@@ -1,0 +1,4 @@
+/home/grongo/University/bachelor-1/semester-1/programming-principles-in-c/labs/build/CMakeFiles/edit_cache.dir
+/home/grongo/University/bachelor-1/semester-1/programming-principles-in-c/labs/build/CMakeFiles/package_source.dir
+/home/grongo/University/bachelor-1/semester-1/programming-principles-in-c/labs/build/CMakeFiles/rebuild_cache.dir
+/home/grongo/University/bachelor-1/semester-1/programming-principles-in-c/labs/build/CMakeFiles/package.dir

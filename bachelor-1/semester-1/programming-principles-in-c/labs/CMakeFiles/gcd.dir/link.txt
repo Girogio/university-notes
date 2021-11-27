@@ -1,0 +1,1 @@
+/usr/bin/cc -rdynamic CMakeFiles/gcd.dir/modularity/gcd.c.o -o gcd 

@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/grongo/University/bachelor-1/semester-1/programming-principles-in-c/labs/build",
+  "command": "/bin/clang++-10    -g   -o CMakeFiles/labs.dir/main.cpp.o -c /home/grongo/University/bachelor-1/semester-1/programming-principles-in-c/labs/main.cpp",
+  "file": "/home/grongo/University/bachelor-1/semester-1/programming-principles-in-c/labs/main.cpp"
+}
+]

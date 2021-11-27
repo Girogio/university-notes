@@ -1,0 +1,1 @@
+/usr/bin/cc -rdynamic CMakeFiles/factorial.dir/modularity/factorial.c.o -o factorial 

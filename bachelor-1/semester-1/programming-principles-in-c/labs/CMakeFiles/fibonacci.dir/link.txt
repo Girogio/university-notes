@@ -1,0 +1,1 @@
+/usr/bin/cc -rdynamic CMakeFiles/fibonacci.dir/modularity/fibonacci.c.o -o fibonacci 
