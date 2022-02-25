@@ -1,0 +1,118 @@
+\documentclass[a4paper]{article}
+\input{../preamble.tex}
+\title{Discrete Methods}
+\def\propositionautorefname{\textbf{Proposition}}
+\begin{document}
+	\maketitle
+	\tableofcontents
+	% start lectures
+	% end lectures	
+	\section{Tuples, Permutations Sets and Multisets}
+	
+	
+	\begin{proposition}\label{prop:1.1}
+		$\mod{X \times Y} = \mod X \cdot \mod Y $
+	\end{proposition}
+	
+	\begin{proof}
+		Let $x_1, x_2 \cdots x_m$ be the elements of $X$ and let $y_1, y_2, \cdots y_n$ be the elements of $Y$. $X \times Y$ consists of all the pairs with the choices for the first element from $X$ and the choices for the second element from $Y$. The number of elements of $X \times Y$ is the sum of $n$ $m$'s, i.e. $mn$.
+	\end{proof}
+	
+	
+	\begin{proposition}\label{prop:1.2}
+		If $A_1, A_2, \cdots, A_k$ are mutually disjoint sets, then $\mod{A_1 \cup A_2 \cup \cdots \cup A_n} = \mod{A_1} + \mod{A_2} + \cdots + \mod{A_k}$, i.e.: \[\mod{\bigcup_{k\in\mathbb N}A_k} = \sum_{k\in\mathbb N} \mod{A_k}\]
+	\end{proposition}
+	
+	\begin{proof}
+		By induction on k. This proposition is a special case of the \textbf{Inclusion-Exclusion} principle where the unions of all the sets are the empty set and thus have size 0.
+	\end{proof}
+	
+	\newpage
+	
+	\subsection{Repetition and Order}
+	
+	Consider the set $[5] = \set{1,2,3,4,5}$. Suppose we had to pick 4 numbers from this set, possibly with repetition. So the set of all choices would look like the following: \[[5]^4= \set{(1,1,1,1),\, (1,1,1,2),\, (1,1,2,1),\, \cdots,\, (5,5,5,5)}\] which is equivalent to $[5] \times [5] \times [5] \times [5]$. The following proposition will enlighten us on how to calculate the size of said set.
+	
+	\begin{proposition}\label{prop:1.3}
+		For all $k \geq 2$ sets $X_1, X_2, \cdots, X_k$, \[\mod{X_1 \times X_2 \times \cdots \times X_k} = \mod{X_1} \times \mod{X_2} \times \cdots \times \mod{X_k}.\]
+	\end{proposition}
+	
+	
+	
+	\begin{proof}
+		By induction on $k$, the base case $k=2$ is given by \textbf{\autoref{prop:1.1}}. Now, consider $k\geq3$. Let $x_1, x_2,\cdots,x_k$ be the elements of $X_k$ and $A= X_1 \times X_2, \times \cdots \times X_k$, or rather \[A = \set{x_{11}, x_{12}, \cdots, x_{1k}} \times \set{x_{21}, x_{22}, \cdots, x_{2k}} \times \cdots \times \set{x_{k1}, x_{k2}, \cdots, x_{kk}}.\] For $j \in \mathbb N$, let $A_j$ be the set of $k$-tuples ending in $x_j\in X_1$. \marginpar{\protect\footnotesize\fbox{$A_j \subseteq A$.}} Therefore, a $k-tuple$ is in $A_j$ if and only if its first $k-1$ entries form a $(k-1)$-tuple in $X_1 \times X_2 \times \cdots \times X_{k-1}$ and its $k$-th entry is $x_j$. Thus, $\mod{A_j}$, or the number of $k$-tuples in $A_j$ is $\mod{X_1 \times X_2 \times \cdots \times X_{k-1}}$, which is $\mod{X_1} \times \mod{X_2} \times \cdots \times \mod{X_{k-1}}$ by the inductive hypothesis. 
+		
+		Next, we show that $A = \bigcup_{n\in\mathbb N}A_n$. Let $a\in A$. Then, the $k$-th entry of $a$ is $x_i$ for some $i \in [n]$. So $a\in A_i$ and hence $a \in \bigcup_{n\in\mathbb N}A_n$ and therefore $A \subseteq \bigcup_{n\in\mathbb N}$. Now let $b \in \bigcup_{n\in\mathbb N} A_n$. Then, $b$ is an element of at least one set of $A_1, A_2, \cdots, A_n$. Since $\forall j\in\mathbb N,\, A_j \subseteq A$, we have $b \in A$ and therefore $\bigcup_{n\in\mathbb N}A_n \subseteq A$. Finally, $A = \bigcup_{n\in\mathbb N} A_n$.
+		
+		Now, $A_1, A_2, \cdots, A_n$ are mutually disjoint, because for any two sets $A_i$ and $A_j$ with $i\neq j$, any $k$-tuple in $A_i$ ends with $x_i$, whilst any $k$-tuple in $A_j$ ends with $x_j$. This fact allows us to use \textbf{\autoref{prop:1.2}} as follows:
+		
+		\begin{align*}
+			A &= A_1 \cup A_2 \cup \cdots \cup A_k\\
+			\mod A & = \mod{A_1} + \mod{A_2} + \cdots + \mod{A_n}                                                   \\
+			& = \underbrace{\mod{X_1} \times \mod{X_2} \times \cdots \times \mod{X_{k-1}}}_{n \text{ times}} \\
+			& = \left(\mod{X_1} \times \mod{X_2} \times \cdots \times \mod{X_{k-1}}\right)n                  \\
+			& = \mod{X_1} \times \mod{X_2} \times \cdots \times \mod{X_{k-1}} \times \mod{X_k}               
+		\end{align*}\marginpar{\vspace{-3em}\protect{\footnotesize\fbox{$n=\mod{X_k}$}}}
+	\end{proof}
+	
+	\begin{corollary}
+		For any $k\geq 2$ and any set $X$, \[\mod{X^k} = \mod{X}^k.\]
+	\end{corollary}
+	
+	\begin{proof}
+		This is given by \textbf{\autoref{prop:1.3}} with $X_1 = X_2 = \cdots = X_k = X$
+	\end{proof}
+	
+	\newpage
+	
+	\subsection{\cancel{Repetition} and Order}
+	
+	Suppose we had to choose $n$ objects from $k$ distinct objects, that each object can only be chosen once, and that the order in which we picked the $n$ things mattered. We can label the set of $n$ objects $\set{1,2,\cdots,n} = [n]$. Each unique possibility can be represented by a $k$-tuple $(a_1, a_2, \cdots, a_k)$, but this time we have $a_1 \neq a_2 \neq \cdots \neq a_k$, or rather, all $a_k$ are distinct elements from $[n]$. Let $P^k_n$ be the set of such $k$-tuples defined as follows:	\[P^k_n = \set{(a_1, a_2, \cdots, a_k) \in [n]^k : a_1 \neq a_2 \neq \cdots \neq a_k}.\] The problem is now reduced into finding the size of $P^k_n$, since any $k$-tuple in this set represents a valid possibility, and all possibilities must be in this form.
+	
+	\begin{note}
+		Since we cannot choose more objects ($k$) than the amount we have ($n$) we have to assume $n$ is at least $k$. So we have: \[P^k_n = \emptyset \, \iff \, k \leq n.\]
+	\end{note}
+	
+	For example, if we had to pick 3 objects from a pool of 4, so $n=4$ and $k=3$, then the possibilities would be:
+	
+	\begin{center}
+		(1, 2, 3), (1, 3, 2), (2, 1, 3), (2, 3, 1), (3, 1, 2), (3, 2, 1),\\
+		(1, 2, 4), (1, 4, 2), (2, 1, 4), (2, 4, 1), (4, 1, 2), (4, 2, 1),\\
+		(1, 3, 4), (1, 4, 3), (3, 1, 4), (3, 4, 1), (4, 1, 3), (4, 3, 1),\\
+		(2, 3, 4), (2, 4, 3), (3, 2, 4), (3, 4, 2), (4, 2, 3), (4, 3, 2).
+	\end{center}
+
+	\begin{recall}
+		The product $n\times (n-1) \times (n-2) \cdots \times 2 \times 1$ is represented by $n!$. In general, $\prod_{i=1}^n a_i$ represents the product $a_1 \times a_2 \times \cdots \times a_n$. Thus, $n! = \prod_{i=1}^m i$. We define $0!$ as 1.
+	\end{recall}`
+	
+	\begin{proposition}
+		For $1 \leq k \leq n,$ \[\mod{P^k_n} = n \times (n-1) \times (n-2) \times \cdots \times (n-k+1) = \frac{n!}{(n-k)!}\]
+	\end{proposition}
+	
+	\begin{proof}
+		By induction on $k$. Consider the base case $k=1$. The set $P^1_n$ is $\set{(1),(2),\cdots (n)}$ and has size $n = \frac{n!}{(n-1)!}$ as required.
+		
+		Now consider $k \geq 2$. For each $i\in [n]$, let $A_i$ be the set of tuples in $P^k_n$ which end with $i$. Then, a tuple $(a_1, a_2, \cdots, a_k) \in P^k_n$ is in $A_i$ if and only if $a_k = i$ and $a_1, a_2, \cdots, a_{k-1}$ are distinct elements of $[n]\setminus\{i\}$. So, a tuple in $A_i$ would look like the following: \[A_i = \left\{\left(a_1,\, a_2,\, a_3,\, \cdots,\, a_{k-1}, i\right): a_1\neq a_2  \neq \cdots \neq a_{k-1} \wedge\ \forall j\in \mathbb N,\, a_j \in [n]\setminus\{i\}\right\}\] Thus, size of $A_i$ is the number of $(k-1)$-tuples such that $a_1,\,a_2,\,\cdots,\, a_{k-1}$ are distinct elements of $[n]\setminus\{i\}$. By applying the inductive hypothesis 
+		
+		\begin{align*}
+			\mod{A_i} &= \mod{P^{k-1}_{n-1}}\\
+					  &= \frac{(n-1)!}{\left((n-1)-(k-1)\right)!} = \frac{(n-1)!}{(k-1)!}
+		\end{align*}
+		
+		By an argument similar to that in \textbf{\autoref{prop:1.3}}, we have that $P^k_n = \bigcup_{n\in\mathbb N} A_n$ and that $A_1,\, A_2,\, \cdots,\, A_n$ are mutually disjoint. By \textbf{\autoref{prop:1.2}}, \[\mod{P^k_n}  = \mod{A_1} + \mod{A_2} + \cdots + \mod{A_n}\] as required.
+	\end{proof}
+
+	\begin{note}
+		$P^n_n$ is the set of all permutations of the elements of set $[n]$. Therefore, the number of permutations of a set of $n$ objects is $\frac{n!}{(n-n)!} = n!$. We can refer to $P^k_n$ as the set of permutations of the $k$-element subsets of $[n]$.
+	\end{note}
+	
+	\subsubsection{Stirling's Approximation}
+	
+	For two functions $f$ and $g$ we write that $f(n) \sim g(n)$ if \[\frac{f(n)}{g(n)} \to 1 \text{ as } n\to \infty\]
+	
+	A result using this notation is \textbf{Stirling's Approximation}, which approximates the value of $n!$, goes as follows: \[n! \sim \sqrt{2n\pi}\left(\frac{n}{e}\right)^n\]
+	
+	A direct consequence of \textbf{Stirling's Approximation} gives us this result, quotable without proof:
+	 \[\left(\frac{n}{e}\right) \leq n! \leq \frac{(n+1)^{n+1}}{e^n}.\]
+\end{document}
