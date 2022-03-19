@@ -1,0 +1,46 @@
+%!TEX root = master.tex
+
+\lecture{1}{Tue 01 Mar 2022 18:01}{Linear In/dependence}
+
+\begin{definition}
+    A field is a set $F$ whose elements are scalars with 2 binary operations such that $(F, +)$ is a group, and
+    so is $(F\setminus\{0\}, \cdot)$
+
+\begin{definition} A linear combination of the vectors $v_1, v_2, \cdots, v_r \in V$
+    with $\alpha_1, \alpha_2, \cdots, \alpha_r\in F$ 
+    \[\sum_{i=1}^r \alpha_i v_i = \alpha_1  v_1 + \alpha_2 v_2 + \cdots + \alpha_r
+    v_r\]
+\end{definition}
+
+
+\begin{definition}
+    If $v = \displaystyle\sum_{j=0}^r \beta_j w_j$, then $v$ is said to be \textbf{spanned /
+    generated} by $w_1, w_2, \cdots, w_r$
+\end{definition}
+
+\begin{definition}
+    In $V(F)$, the vectors $v_1, v_2, \cdots, v_r \in V$ are linearly dependant if
+    $\exists\ \alpha_1, \alpha_2, \cdots, \alpha_r \in F$, that are
+    not all 0, such that $\sum_{i=1}^r \alpha_i v_i = 0$. In English,
+    we say that a vectors $v_1, v_2, \cdots, v_r$ are linearly dependent if their
+    linear combination can be 0.
+\end{definition}
+
+\begin{note}
+  In $\mathbb{R}^{2}$, any two vectors which aren't scalar multiples of each other
+  are linearly independent.
+\end{note}
+
+\textbf{Proposition.} 
+    The elements of a set of vectors containing $\mathbf{0}$, are linearly dependent.
+
+\begin{proof}
+  Let $\set{0, v_{1}, v_{2}, \cdots, v_{k}, \cdots, v_{n}}$ be the set of
+  vectors. Now, we set the linear combination of said vectors to be 0, i.e. 
+  \[\alpha_1 0 + \alpha_2 v_{2} + \alpha_3 v_{3} + \cdots + \alpha_r v_r = 0.\] 
+
+  For the above statement to be true, we only require $\alpha_2, \alpha_3, \cdots,
+  \alpha_r = 0$, whilst $\alpha_1$ can be whatever. This means that there is a case
+  where not all $\alpha$'s are 0 and thus the vectors  $\set{0, v_{1}, v_{2}, \cdots,
+  v_{k}, \cdots, v_{n}}$ are linearly dependent.
+\end{proof}

@@ -1,0 +1,35 @@
+%! TEX root = master.tex
+
+\lecture{12}{Wed 08 Dec 2021 15:08}{Higher Partial Derivatives}
+
+Starting with $z = f(x,y)$ we can find a derivative which itself is a function of
+$x$ and $y$.
+
+Thus, we can differentiate multiple times the derivative to obtain higher partial
+derivatives in more than one way, either with respect to $x$ or with respect to $y$.
+
+The second partial derivative of $z = f(x,y)$ can thus be expressed as
+\[\frac{\partial^2 z}{\partial x^2} \text{ or } \frac{\partial^2 z}{\partial x
+\partial y} \text{ or } \frac{\partial^2 z}{\partial y \partial x} \text{ or }
+\frac{\partial^2 z}{\partial y^2} \] with each one distinguishing the order of
+the variables chosen by which we differentiate with respect to.
+
+It is to be noted that the above notation has a similar representation as follows: \[f_{xx} \text{
+	or } f_{xy} \text{ or } f_{yx} 	\text{ or } f_{yy}.\]
+\begin{example}
+	Find the second partial derivative of $f(x, y) = x^3 +x^2y^3 -2y^2$
+\end{example}
+
+\begin{theorem}[Clairant's Theorem]
+	If $f$ is defined on a disk $D$ which contains the point $(a,b)$, and if the
+	functions $f_{xy}$ and $f_{yx}$ are both continuous on D, then $f_{xy}(a,b) =
+	f_{yx}(a,b)$.
+\end{theorem}
+
+\begin{example}
+	Find the second partial derivative of
+	\begin{enumerate}[i)]
+		\item $z=y\tan(2x)$
+		\item $v=\sqrt{x+y^2}$
+	\end{enumerate}
+\end{example}

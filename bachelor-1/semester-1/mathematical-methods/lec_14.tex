@@ -1,0 +1,38 @@
+%! TEX root = master.tex
+
+\lecture{14}{Wed 15 Dec 2021 16:23}{Special Integrating Factor}
+
+\begin{definition}
+	If the equation $M(x,y)dx + N(x,y)dy = 0$ is \textbf{not} an exact equation, but the equation 
+	$IM\,dx+ IN\,dy = 0$ is exact, then $I(x,y)$ is called an integrating factor of the initial
+	equation.
+\end{definition}
+
+\begin{remark}
+	If $I(x,y)$ is an integrating factor of the initial equation with continuous partial
+	erivativesm then we get \[\p{I(x,y)M(x,y)}{y} + \p{I(x,y)N(x,y)}{x}\] and we can find the
+	general solution of $F(x,y) = C$
+\end{remark}
+
+\begin{example}
+Find an integrating factor $I(x,y) = x^ny^m$ to solve the equation
+$(12+5xy)dx + (6xy^{-1} + 3x^2)dy = 0$
+\end{example}
+
+\begin{theorem}
+	If $\frac{\p M y - \p N x}{N}$ is a cont. function which depends only on $x$, then $I(x) =
+	e^{\int \frac{\p M y - \p N x}{N}dy}$.
+\end{theorem}
+
+\begin{theorem}
+	If $\frac{\p N x - \p M y}{M}$ is a cont. function which depends only on $y$, then $I(x) =
+	e^{\int \frac{\p N x - \p M y}{M}dx}$.
+\end{theorem}
+
+\begin{example}
+	Solve 
+	\begin{enumerate}[i)]
+		\item $(x^4 - x + y)dx - x dy = 0$ 
+		\item $(y^+2xy)dx -x^2 dy = 0$.
+	\end{enumerate}
+\end{example}

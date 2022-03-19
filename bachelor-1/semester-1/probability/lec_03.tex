@@ -1,0 +1,26 @@
+%! TEX root = master.tex
+
+\lecture{3}{Fri 17 Dec 2021 13:03}{Multi-event probability}
+
+$$\prob \left[ A_1 \cup A_2 \cup \cdots \cap A_3 \right] = \bigcup_{i \in \mathbb N}^n A_i =
+\frac{1}{n!}$$
+
+
+$k$ balls are distributed among $n$ cells, each ball being equally likely to be in any of the
+available cells. What is the probability that $m$ cells are empty?
+
+Let $A_i$ be the probability that the $i^{th}$ cell is empty.
+
+The probability that no cell is empty is equivalent to the complement of the probability that at
+least one cell is empty.
+
+\begin{align*}
+	&1 - \prob\left[\bigcup_{i \in \mathbb N}^n A_i\right]\\
+	\prob[A_i] &= \frac{(n-1)^k}{n^k} = \left(1 - \frac{1}{n}\right)^k\\
+	\prob[A_i \cap A_j] &= \frac{(n-2)^k}{n^k} = \left(1 - \frac{2}{n}\right)^k\\
+	\prob[A_i \cap A_j \cap A_k] &= \frac{(n-3)^k}{n^k} = \left(1 - \frac{3}{n}\right)^k\\
+	\prob[A_i \cap A_j \cap A_k \cap \cdots \cap A_n ] &= \frac{(n-n)^k}{n^k} = \left(1 -
+	\frac{n}{n}\right)^k = 0\\
+\end{align*}
+
+

@@ -1,0 +1,45 @@
+%! TEX root = master.tex
+
+\lecture{11}{Mon 06 Dec 2021 15:41}{Partial Derivatives}
+
+A function of two variables is one which assigns to each ordered pair of real numbers $(x,y)$ in a set $D$ a unique real numer denoted by $f(x,y)$.
+
+The set $D$ is the domain of $f$ and its range is the set of values that $f$ can take on, that is: \[\text{Rng}(f) :=  \{\ f(x,y) : (x,y) \in D\ \}\]
+
+\begin{definition}
+	If $f$ is a function of two variables with domain $D$, then the graph of $f$ is the set of points $(x,y,z) \in \mathbb{R}^3$ such that $z = f(x,y)$ and $(x,y) \in D$.
+\end{definition}
+
+\begin{definition}
+	The level curves of a function $f$ of two variables are the curves with
+	equations $f(x,y) = C$, where $C$ is a constant in the range of $f$.
+\end{definition}
+
+\begin{recall}
+	For a function $y=f(x)$, the derivative of $f$ is defined as:
+	$\lim_{\delta x \to 0} \frac{f(x + \delta x) - f(x)}{\delta x}$.
+\end{recall}
+
+Consider a function $z = f(x,y)$ and let $\delta z$ be a small increment in $z$ 
+due to a small increment in $x$ while keeping $y$ constant.
+
+\begin{align*}
+	\delta z &= f((x+\delta x), y) - f(x,y)\\\\
+	\frac{\delta z}{\delta x} &= \frac{f((x + \delta x), y) - f(x,y)}{\delta x}\\
+\end{align*}
+
+if the limit as $\delta x \to 0$ exists, then
+\[
+  \frac{\partial z}{\partial x} = 
+  \lim_{\delta x \to 0} \left( \frac{f((x + \delta x), y) - f(x,y)}{\delta x} \right)
+\]
+is the first partial derivative of $z$ w.r.t.$x$. Similarly,
+\[
+  \frac{\partial z}{\partial y} = 
+  \lim_{\delta y \to 0} \left( \frac{f\left(x, (y + \delta y)\right) - f(x,y)}{\delta y} \right)
+\]
+is the first partial derivative of $z$ w.r.t.$y$.
+
+
+
+

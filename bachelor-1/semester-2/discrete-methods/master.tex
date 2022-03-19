@@ -93,7 +93,7 @@
 	\begin{proof}
 		By induction on $k$. Consider the base case $k=1$. The set $P^1_n$ is $\set{(1),(2),\cdots (n)}$ and has size $n = \frac{n!}{(n-1)!}$ as required.
 		
-		Now consider $k \geq 2$. For each $i\in [n]$, let $A_i$ be the set of tuples in $P^k_n$ which end with $i$. Then, a tuple $(a_1, a_2, \cdots, a_k) \in P^k_n$ is in $A_i$ if and only if $a_k = i$ and $a_1, a_2, \cdots, a_{k-1}$ are distinct elements of $[n]\setminus\{i\}$. So, a tuple in $A_i$ would look like the following: \[A_i = \left\{\left(a_1,\, a_2,\, a_3,\, \cdots,\, a_{k-1}, i\right): a_1\neq a_2  \neq \cdots \neq a_{k-1} \wedge\ \forall j\in \mathbb N,\, a_j \in [n]\setminus\{i\}\right\}\] Thus, size of $A_i$ is the number of $(k-1)$-tuples such that $a_1,\,a_2,\,\cdots,\, a_{k-1}$ are distinct elements of $[n]\setminus\{i\}$. By applying the inductive hypothesis 
+		Now consider $k \geq 2$. For each $i\in [n]$, let $A_i$ be the set of tuples in $P^k_n$ which end with $i$. Then, a tuple $(a_1, a_2, \cdots, a_k) \in P^k_n$ is in $A_i$ if and only if $a_k = i$ and $a_1, a_2, \cdots, a_{k-1}$ are distinct elements of $[n]\setminus\{i\}$. So, a tuple in $A_i$ would look like the following: \[A_i = \left\{\left(a_1,\, a_2,\, a_3,\, \cdots,\, a_{k-1}, i\right): a_1\neq a_2  \neq \cdots \neq a_{k-1} \wedge\ \forall j\in \mathbb N,\, a_j \in [n]\setminus\{i\}\right\}\] Thus, size of $A_i$ is the number of $(k-1)$-tuples such that $a_1,\,a_2,\,\cdots,\, a_{k-1}$ are distinct elements of $[n]\setminus\{i\}$. By applying the inductive hypothesis
 		
 		\begin{align*}
 			\mod{A_i} &= \mod{P^{k-1}_{n-1}}\\
@@ -114,5 +114,9 @@
 	A result using this notation is \textbf{Stirling's Approximation}, which approximates the value of $n!$, goes as follows: \[n! \sim \sqrt{2n\pi}\left(\frac{n}{e}\right)^n\]
 	
 	A direct consequence of \textbf{Stirling's Approximation} gives us this result, quotable without proof:
-	 \[\left(\frac{n}{e}\right) \leq n! \leq \frac{(n+1)^{n+1}}{e^n}.\]
+	 \[\left(\frac{n}{e}\right) \leq n! \leq \frac{(n+1)^{n+1}}{e^{n}}.\]
+
+     \subsection{\cancel{Repetition}, \cancel{Order}}
+
+
 \end{document}

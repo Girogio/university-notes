@@ -12,7 +12,7 @@
 \usepackage{arydshln}
 \delimitershortfall=0pt
 \setlength{\dashlinegap}{2pt}
-
+\usepackage{enumerate}
 \usepackage{amsmath,amssymb,fancyhdr,array}
 
 \pagestyle{fancy}
@@ -142,12 +142,13 @@ S \romannumeral\xintreplicate{8}{&E}\romannumeral\xintreplicate{23}{&M}\\
 \usepackage{mdframed}
 \mdfsetup{skipabove=1em,skipbelow=0em}
 \theoremstyle{definition}
-\newmdtheoremenv[nobreak=true]{definition}{Definition}
-\newmdtheoremenv[nobreak=true]{property}{Property}
-\newmdtheoremenv[nobreak=true]{consequence}{Consequence}
-\newmdtheoremenv[nobreak=true]{lemma}{Lemma}
-\newmdtheoremenv[nobreak=true]{proposition}{Proposition}
-\newmdtheoremenv[nobreak=true]{theorem}{Theorem}
+\newtheorem*{definition}{Definition}
+\newtheorem*{recall}{Recall}
+\newtheorem*{property}{Property}
+\newtheorem*{consequence}{Consequence}
+\newtheorem*{lemma}{Lemma}
+\newtheorem*{proposition}{Proposition}
+\newtheorem*{theorem}{Theorem}
 \newmdtheoremenv[nobreak=true]{law}{Law}
 \newmdtheoremenv[nobreak=true]{corollary}{Corollary}
 \newmdtheoremenv{conclusion}{Conclusion}
@@ -167,6 +168,7 @@ S \romannumeral\xintreplicate{8}{&E}\romannumeral\xintreplicate{23}{&M}\\
 \newcommand{\matr}[1]{\mathbf{#1}} % undergraduate algebra version
 \newcommand{\matri}[1]{$\mathbf{#1}$} % undergraduate algebra version
 \renewcommand{\mod}[1]{\left|\matr{#1}\right|}
+\newcommand\p[2]{\ensuremath\frac{\partial #1}{\partial #2}}
 \newcommand{\rank}[1]{\text{rank}\left(\mathbf{#1}\right)}
 \newcommand{\inverse}{^{-1}}
 \newcommand{\augmented}[2]{\begin{array}{c:c}\mathbf{#1} & \mathbf{#2}\end{array}}
